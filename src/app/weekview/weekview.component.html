@@ -14,8 +14,10 @@
       </div>
       <div *ngIf="weatherData !== null" class="weather">
         <div class="row" >
-          <h3>Weather in {{ weatherData.city.name }}, {{ weatherData.city.country}}</h3>
-          <i class="wi wi-day-sunny"></i> temperature today is {{ day.temp.day }} °C.
+          <h3 class="col-md-6">Weather in {{ weatherData.city.name }}, {{ weatherData.city.country}}</h3>
+          <div class="col-md-3">
+            <i class="wi wi-day-sunny"></i> temperature today is {{ weatherData.list[0].temp.day }} °C.
+          </div>
         </div>
         <div class="container">
           <div class="row">
