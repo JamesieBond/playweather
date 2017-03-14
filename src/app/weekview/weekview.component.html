@@ -1,0 +1,31 @@
+
+<div class="site-wrapper">
+  <div class="site-wrapper-inner">
+    <div class="cover-container">
+      <div class="masthead clearfix">
+        <div class="inner">
+          <h3 class="masthead-brand">Playable Weather</h3>
+          <nav class="nav nav-masthead">
+            <a class="nav-link" href="#" [routerLink]="['/searchView']">Home</a>
+            <a class="nav-link active" href="#" [routerLink]="['/weeklyView']">Weekly View</a>
+            <a class="nav-link" href="#"  [routerLink]="['/dayView']">Daily View</a>
+          </nav>
+        </div>
+      </div>
+      <div class="row" *ngIf="weatherData !== null">
+        <h3>Forecast for {{ weatherData.city.name }}</h3>
+        <ul >
+          <li *ngFor="let day of weatherData.list" >
+            <a  *ngIf="day.weather.main == 'rain'" >
+              <i class="wi wi-day-rain"></i> temperature on {{ day.dt }} will be {{ day.temp.day }} °C.
+            </a>
+            <a>
+              <i class="wi wi-day-sunny"></i> temperature on {{ day.dt }} will be {{ day.temp.day }} °C.
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,39 @@
+<div class="site-wrapper">
+  <div class="site-wrapper-inner">
+    <div class="cover-container">
+      <div class="masthead clearfix">
+        <div class="inner">
+          <h3 class="masthead-brand">Playable Weather</h3>
+          <nav class="nav nav-masthead">
+            <a class="nav-link active" href="#" [routerLink]="['/searchView']">Home</a>
+            <a class="nav-link" href="#" [ngClass]="{disabled : !isThereWeatherData}" [routerLink]="['/weeklyView']">Weekly View</a>
+            <a class="nav-link" href="#" [ngClass]="{disabled : !isThereWeatherData}" [routerLink]="['/dayView']">Daily View</a>
+          </nav>
+        </div>
+      </div>
+      <form class="inner cover form-inline">
+        <div class="form-group">
+            <h1 class="cover-heading">Weather Forecast for your City.</h1>
+            <input type="text" class="form-control form-control-lg col-sm-6" id="searchInput" aria-describedby="searchHelp" placeholder="Enter City" #city>
+            <span class="btn-group col-sm-2">
+              <button type="submit" class="btn btn-lg btn-success" (click)="searchCity(city.value)">Search</button>
+            </span>
+        </div>
+        <span [hidden]="!searchError" class="form-control-feedback has-danger"></span>
+        <small id="searchHelp" class="form-text text-muted">Enter City name exactly</small>
+      </form>
+
+      <div class="container" *ngIf="cities.length > 0">
+        <div *ngFor="let city of cities"  style="border:2px #0450cc;">
+          <div class="card-block text-nowrap text-center" >
+              <a (click)="weatherForCity(city._id)" [routerLink]="['/weeklyView']">
+                <div class="col-sm-12">City: {{ city.name }} -- Country: {{ city.country }}</div>
+                <div class="col-sm-12">at longitude of {{ city.coord.lon }} and latitude of {{ city.coord.lat }}.</div>
+              </a>
+          </div>
+        </div>
+      </div>
+
+  </div>
+
+</div>
