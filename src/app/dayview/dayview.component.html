@@ -18,13 +18,14 @@
           <h4 class="col-md-12">Mostly {{ dayData.weather[0].main }} with cloud percentage of {{ dayData.clouds }}</h4>
           <h5 class="col-md-12">Wind Speeds of {{ dayData.speed }} and Direction of {{ dayData.deg }}</h5>
           <h6 class="col-md-12">With Pressure of {{ dayData.pressure }} bar, Humidity of {{ dayData.humidity }}</h6>
+          <div class="divider"></div>
             <ul>
               <li> With <strong>Minimum</strong> temperature of {{ dayData.temp.min }} °C.
               <li> With <strong>Maxmium</strong> temperature of {{ dayData.temp.max }} °C.
-              <li> Temperature during the <strong>morning</strong> of {{ dayData.temp.morn }} °C.
-              <li> Temperature during the <strong>day</strong> of {{ dayData.temp.day }} °C.
-              <li> Temperature during the <strong>evening</strong> of {{ dayData.temp.eve }} °C.
-              <li> Temperature during the <strong>night</strong> of {{ dayData.temp.night }} °C.
+              <li> Temperature during the <strong>morning</strong> : {{ dayData.temp.morn }} °C.
+              <li> Temperature during the <strong>day</strong> : {{ dayData.temp.day }} °C.
+              <li> Temperature during the <strong>evening</strong> : {{ dayData.temp.eve }} °C.
+              <li> Temperature during the <strong>night</strong> : {{ dayData.temp.night }} °C.
             </ul>
           </div>
       </div>

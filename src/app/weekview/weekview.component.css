@@ -23,7 +23,27 @@
    border: .05rem solid #fff;
  }
 
+ .day .day:hover
+ {
+     color: #fff;
+     background-color: #F68D2E;
+ }
 
+ .day
+ {
+     flex-grow: 1;
+     text-align: center;
+     cursor: pointer;
+ }
+
+ .weather
+  {
+      padding: 25px;
+      display: flex;
+      flex-flow: column wrap;
+      box-shadow: 0px 1px 5px 0px #cfcfcf;
+      overflow: hidden;
+  }
 
  /* Extra markup and styles for table-esque vertical and horizontal centering */
  .site-wrapper {

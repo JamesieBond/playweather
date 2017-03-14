@@ -12,14 +12,17 @@
           </nav>
         </div>
       </div>
-      <div *ngIf="weatherData !== null">
+      <div *ngIf="weatherData !== null" class="weather">
         <div class="row" >
           <h3>Weather in {{ weatherData.city.name }}, {{ weatherData.city.country}}</h3>
+          <i class="wi wi-day-sunny"></i> temperature today is {{ day.temp.day }} °C.
         </div>
-        <div class="row">
-          <div class="col" *ngFor="let day of weatherData.list; let i = index; trackBy: trackByFn" >
-            <a (click)="weatherForDay(i)" [routerLink]="['/dayView']"> temperature at {{ day.dt }} will be {{ day.temp.day }} °C.
-            </a>
+        <div class="container">
+          <div class="row">
+            <div class="col day" *ngFor="let day of weatherData.list; let i = index; trackBy: trackByFn" >
+              <a (click)="weatherForDay(i)" [routerLink]="['/dayView']"> <i class="wi wi-day-sunny"></i> <strong>{{ day.dt }}</strong> Temp: {{ day.temp.day }} °C.
+              </a>
+            </div>
           </div>
         </div>
       </div>
