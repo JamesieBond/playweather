@@ -31,8 +31,9 @@ export class WeekviewComponent implements OnInit {
 
         weatherData.list[i].temp.day = (weatherData.list[i].temp.day - 273.15).toFixed(2);
         weatherData.list[i].temp.night = (weatherData.list[i].temp.night - 273.15).toFixed(2);
+        weatherData.list[i].temp.eve = (weatherData.list[i].temp.eve - 273.15).toFixed(2);
 
-        
+
 
       }
     });
