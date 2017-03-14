@@ -27,6 +27,16 @@ export class WeatherService {
     this.weatherData = weatherData;
   }
 
+  dayIndex = 0;
+
+  getDay(){
+    return this.dayIndex;
+  }
+
+  setDay(dayIndex){
+    this.dayIndex = dayIndex;
+  }
+
   getAllCity() {
     return this.http.get('/api/city')
       .map(res => res.json());
@@ -37,9 +47,8 @@ export class WeatherService {
       .map(res => res.json());
   };
 
-
   getWeatherForCity(mapid){
-    return this.http.get('http://api.openweathermap.org/data/2.5/forecast/daily?id=' + mapid + '&cnt=16&appid=7118c4621ff7538a91cc416578e0cc5b')
+    return this.http.get('http://api.openweathermap.org/data/2.5/forecast/daily?id=' + mapid + '&cnt=5&appid=7118c4621ff7538a91cc416578e0cc5b')
       .map(res => res.json());
   };
 

@@ -10,10 +10,16 @@ export class DayviewComponent implements OnInit {
 
   weatherData = null;
 
+  dayData = null;
+
+  dayIndex = 0;
+
   constructor(private weatherService: WeatherService) { }
 
   ngOnInit() {
     this.weatherData = this.weatherService.getWeatherData();
+    this.dayIndex = this.weatherService.getDay();
+    this.dayData = this.weatherData.list[this.dayIndex];
   }
 
 }

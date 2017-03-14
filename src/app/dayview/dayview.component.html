@@ -10,9 +10,23 @@
             <a class="nav-link active" href="#" [routerLink]="['/dayView']">Daily View</a>
           </nav>
         </div>
-        <p>
-          dayview works!
-        </p>
+      </div>
+      <div class="cover-container">
+        <div class="inner cover">
+          <h3 class="col-md-12">Weather For {{ dayData.dt }} in {{ weatherData.city.name }}, {{ weatherData.city.country}}</h3>
+
+          <h4 class="col-md-12">Mostly {{ dayData.weather[0].main }} with cloud percentage of {{ dayData.clouds }}</h4>
+          <h5 class="col-md-12">Wind Speeds of {{ dayData.speed }} and Direction of {{ dayData.deg }}</h5>
+          <h6 class="col-md-12">With Pressure of {{ dayData.pressure }} bar, Humidity of {{ dayData.humidity }}</h6>
+            <ul>
+              <li> With <strong>Minimum</strong> temperature of {{ dayData.temp.min }} °C.
+              <li> With <strong>Maxmium</strong> temperature of {{ dayData.temp.max }} °C.
+              <li> Temperature during the <strong>morning</strong> of {{ dayData.temp.morn }} °C.
+              <li> Temperature during the <strong>day</strong> of {{ dayData.temp.day }} °C.
+              <li> Temperature during the <strong>evening</strong> of {{ dayData.temp.eve }} °C.
+              <li> Temperature during the <strong>night</strong> of {{ dayData.temp.night }} °C.
+            </ul>
+          </div>
       </div>
     </div>
   </div>
